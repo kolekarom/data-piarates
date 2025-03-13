@@ -24,7 +24,7 @@ Start the server
   npm run start
 ```
 
-# Hospital-Management-System
+#Medical-Report-Management-System
 This website is made for the user interaction only , where the user or patients can book appointments , can get their reports online , know the details about the hospital, Doctors and many more information...
 
 ## Tech Stack
