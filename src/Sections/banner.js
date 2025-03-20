@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import doctor from "../Assets/doctor.webp";
 import "./banner.css";
+import NavBars from "./navbar";
 function Banner() {
   return (
     <div className="banner">
@@ -13,7 +14,6 @@ function Banner() {
               <Link to={"/about"}>Read More</Link>
             </button>
           </div>
-
           <div className="col-lg-5 col-md-5 bannerImg">
             <img src={doctor} alt="img" />
           </div>

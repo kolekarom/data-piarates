@@ -1,3 +1,4 @@
+
 import "./login.css";
 import "../index.css";
 import logo from "../Assets/Logo.png";
@@ -9,8 +10,8 @@ import { authLogin, forgotPassword } from "../Redux/auth/action";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const notify = (text) => toast(text);
 
+const notify = (text) => toast(text);
 function Login() {
   const [form, setForm] = useState({ patientID: "", password: "" });
   const [email, setemail] = useState("");
@@ -37,6 +38,7 @@ function Login() {
       return notify("Error occurred, unable to Login.");
     }
   };
+
   const [forgotLoading, setforgetLoading] = useState(false);
   const HandlePassword = () => {
     let data = { email, type: "patient" };
@@ -89,7 +91,7 @@ function Login() {
                   </div>
                   <div className="form-group" onClick={handleClick}>
                     <Link
-                      type="botton"
+                      type="button"
                       className="btn mb-30 btn-lg btn-primary w-100"
                     >
                       Login
@@ -109,6 +111,14 @@ function Login() {
                   <button onClick={HandlePassword}>
                     {forgotLoading ? "Loading.." : "Send Mail"}
                   </button>
+                </div>
+                <div className="signup-option">
+                  <p>
+                    Don't have an account?{" "}
+                    <Link to="/signup" className="signup-link">
+                      Sign Up
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>

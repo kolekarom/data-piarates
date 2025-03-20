@@ -4,16 +4,23 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "../Assets/Logo.png";
 import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
 import "./navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const notify = (text) => toast(text);
 
+const notify = (text) => toast(text);
 function NavBars() {
-  const { data } = useSelector((store) => store.auth);
+  const navigate = useNavigate(); // Use the useNavigate hook
+  const auth = JSON.parse(localStorage.getItem("user"));
   const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch({ type: "AUTH_LOGOUT" }); // Dispatch logout action
+    localStorage.removeItem("user"); // Clear user data from localStorage
+    notify("Logged out"); // Show toast notification
+    navigate("/login"); // Redirect to login page
+  };
   return (
     <div className="navStick">
       <ToastContainer />
@@ -39,14 +46,11 @@ function NavBars() {
               <Link to={"/booking"} className="nav-link">
                 Booking
               </Link>
-              {data?.isAuthenticated ? (
+              {auth ? (
                 <Link
                   to=""
                   className="nav-link"
-                  onClick={() => {
-                    dispatch({ type: "AUTH_LOGOUT" });
-                    notify("Logged out");
-                  }}
+                  onClick={handleLogout} // Use the handleLogout function
                 >
                   Logout
                 </Link>
@@ -55,7 +59,12 @@ function NavBars() {
                   <Link to={"/login"} className="dropdown-item">
                     Patient
                   </Link>
-                  <a href="https://hm-system.netlify.app/" className="dropdown-item">
+                  <a
+                    href="https://hm-system.netlify.app/"
+                    className="dropdown-item"
+                    target="_blank" // Open in new tab
+                    rel="noopener noreferrer" // Security best practice
+                  >
                     Staff
                   </a>
                 </NavDropdown>
@@ -75,5 +84,4 @@ function NavBars() {
     </div>
   );
 }
-
 export default NavBars;

@@ -126,3 +126,12 @@ nav .navbar-nav button:hover {
     width: 130px;
   }
 }
+.nav-link button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
