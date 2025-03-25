@@ -56,7 +56,7 @@ function NavBars() {
                     Patient
                   </Link>
                   <a href="https://hm-system.netlify.app/" className="dropdown-item">
-                    Staff
+                    Doctor
                   </a>
                 </NavDropdown>
               )}

@@ -110,7 +110,10 @@ function PatientProfile() {
                 <p><i className="material-icons">healing</i> Diagnosis: {patientData.lastDiagnosis}</p>
                 <p><i className="material-icons">medication</i> Prescription: {patientData.lastPrescription}</p>
               </div>
-              <button className="view-all-btn">
+              <button
+                className="view-all-btn"
+                onClick={() => navigate('/medical-history')}
+              >
                 <i className="material-icons">list_alt</i> View Full History
               </button>
             </div>
@@ -131,7 +134,7 @@ function PatientProfile() {
               <i className="material-icons">receipt_long</i>
               Request Prescription
             </button>
-            <button className="action-btn"  onClick={() => navigate('/medical-records')}>
+            <button className="action-btn" onClick={() => navigate('/medical-records')}>
               <i className="material-icons">folder_shared</i>
               Medical Records
             </button>
@@ -142,4 +145,4 @@ function PatientProfile() {
   );
 }
 
-export default PatientProfile;
+export default PatientProfile; 

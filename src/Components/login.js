@@ -22,7 +22,7 @@ function Login() {
     // In a real app, you would verify credentials here
     // For now, we'll just navigate to the profile page
     toast.success("Login successful!");
-    navigate("/patientprofile");
+    navigate("/patient-profile");
   };
 
   const handleChange = (e) => {

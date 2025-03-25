@@ -4,6 +4,7 @@ import About from "./Components/about";
 import OurTeam from "./Components/ourteam";
 import Booking from "./Components/booking";
 import NotFound from "./Components/notfound";
+import MedicalHistory from './Components/MedicalHistory';
 import Login from "./Components/login";
 import Service from "./Components/service";
 import PatientProfile from "./Components/PatientProfile";
@@ -33,6 +34,7 @@ function App() {
       <Route path="/appointment-confirmation" element={<AppointmentConfirmation />} />
       <Route path="/request-prescription" element={<RequestPrescription />} />
       <Route path="/medical-records" element={<MedicalRecords/>}/>
+      <Route path="/medical-history" element={<MedicalHistory />} />
     </Routes>
   );
 }
