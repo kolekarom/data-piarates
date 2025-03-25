@@ -1,0 +1,596 @@
+/* DoctorLogin.css */
+:root {
+    --doctor-blue: #1976d2;
+    --doctor-blue-light: #e3f2fd;
+    --doctor-blue-dark: #0d47a1;
+    --text-dark: #2d3748;
+    --text-medium: #4a5568;
+    --text-light: #718096;
+    --border-color: #e2e8f0;
+    --error-color: #e53e3e;
+    --success-color: #38a169;
+    --white: #ffffff;
+    --gray-light: #f7fafc;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --rounded-sm: 0.125rem;
+    --rounded-md: 0.375rem;
+    --rounded-lg: 0.5rem;
+    --rounded-full: 9999px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+  
+  .doctor-login-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .login-left-panel {
+    flex: 1;
+    background: linear-gradient(135deg, var(--doctor-blue) 0%, var(--doctor-blue-dark) 100%);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Pure CSS Doctor Illustration */
+  .doctor-illustration {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .doctor-head {
+    width: 100px;
+    height: 120px;
+    background: #ffdbac;
+    border-radius: 50px 50px 40px 40px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  
+  .doctor-face {
+    width: 80px;
+    height: 90px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+  }
+  
+  .doctor-eyes {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+  }
+  
+  .doctor-eye {
+    width: 12px;
+    height: 12px;
+    background: var(--text-dark);
+    border-radius: var(--rounded-full);
+  }
+  
+  .doctor-mouth {
+    width: 30px;
+    height: 10px;
+    border-bottom: 3px solid var(--text-dark);
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+  }
+  
+  .doctor-hair {
+    width: 80px;
+    height: 20px;
+    background: #333;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    top: -5px;
+    left: 10px;
+  }
+  
+  .doctor-ears {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+  }
+  
+  .doctor-ear {
+    width: 10px;
+    height: 15px;
+    background: #ffdbac;
+    border-radius: 5px;
+  }
+  
+  .doctor-body {
+    width: 120px;
+    height: 180px;
+    background: var(--white);
+    border-radius: 20px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .doctor-coat {
+    width: 100%;
+    height: 100%;
+    background: var(--doctor-blue);
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .doctor-collar {
+    width: 80px;
+    height: 20px;
+    background: var(--white);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+  
+  .doctor-pocket {
+    width: 40px;
+    height: 50px;
+    border: 2px solid var(--white);
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+  }
+  
+  .doctor-arms {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    position: absolute;
+    top: 40px;
+    left: -30px;
+  }
+  
+  .doctor-arm {
+    width: 30px;
+    height: 100px;
+    background: #ffdbac;
+    border-radius: 15px;
+  }
+  
+  .doctor-stethoscope {
+    width: 160px;
+    height: 40px;
+    border: 3px solid silver;
+    border-radius: 50%;
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    z-index: 4;
+  }
+  
+  .doctor-stethoscope::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: silver;
+    border-radius: var(--rounded-full);
+    position: absolute;
+    top: 30px;
+    left: 70px;
+  }
+  
+  .pulse-effect {
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--rounded-full);
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translateX(-50%) scale(0.8);
+      opacity: 0.7;
+    }
+    70% {
+      transform: translateX(-50%) scale(1.2);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(-50%) scale(0.8);
+      opacity: 0.7;
+    }
+  }
+  
+  .welcome-message {
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .welcome-message h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .welcome-message p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .login-right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-light);
+    padding: 2rem;
+  }
+  
+  .login-card {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--doctor-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .logo-icon {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .login-header h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .login-header p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+  }
+  
+  .error-message, .success-message {
+    padding: 0.8rem 1rem;
+    border-radius: var(--rounded-md);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .error-message {
+    background-color: #fff5f5;
+    color: var(--error-color);
+    border: 1px solid #fed7d7;
+  }
+  
+  .success-message {
+    background-color: #f0fff4;
+    color: var(--success-color);
+    border: 1px solid #c6f6d5;
+  }
+  
+  .error-icon, .success-icon {
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .login-form {
+    margin-top: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+  }
+  
+  .input-with-icon input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--rounded-md);
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+  
+  .input-with-icon input:focus {
+    outline: none;
+    border-color: var(--doctor-blue);
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .error-text {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: block;
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-me input {
+    margin-right: 0.5rem;
+    accent-color: var(--doctor-blue);
+  }
+  
+  .remember-me label {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .forgot-password {
+    background: none;
+    border: none;
+    color: var(--doctor-blue);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--doctor-blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--rounded-md);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .login-btn:hover {
+    background-color: var(--doctor-blue-dark);
+  }
+  
+  .login-btn:disabled {
+    background-color: #90caf9;
+    cursor: not-allowed;
+  }
+  
+  .login-icon {
+    font-weight: bold;
+  }
+  
+  .spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--rounded-full);
+    border-top-color: var(--white);
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .social-login {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-login p {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .social-login p::before,
+  .social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: var(--border-color);
+  }
+  
+  .social-login p::before {
+    left: 0;
+  }
+  
+  .social-login p::after {
+    right: 0;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-icons button {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--rounded-full);
+    border: 1px solid var(--border-color);
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .social-icons button:hover {
+    background-color: #f7fafc;
+  }
+  
+  .google-btn {
+    color: var(--error-color);
+  }
+  
+  .microsoft-btn {
+    color: var(--doctor-blue);
+  }
+  
+  .signup-link {
+    text-align: center;
+    color: var(--text-medium);
+    font-size: 0.95rem;
+  }
+  
+  .signup-link button {
+    background: none;
+    border: none;
+    color: var(--doctor-blue);
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .signup-link button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .doctor-login-container {
+      flex-direction: column;
+    }
+    
+    .login-left-panel {
+      padding: 2rem 1rem;
+    }
+    
+    .doctor-illustration {
+      width: 150px;
+      height: 250px;
+      margin-bottom: 1rem;
+    }
+    
+    .login-right-panel {
+      padding: 2rem 1rem;
+    }
+    
+    .login-card {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-options {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .forgot-password {
+      align-self: flex-end;
+    }
+    
+    .doctor-head {
+      width: 80px;
+      height: 100px;
+    }
+    
+    .doctor-body {
+      width: 100px;
+      height: 150px;
+    }
+  }

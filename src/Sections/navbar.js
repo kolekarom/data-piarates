@@ -55,9 +55,9 @@ function NavBars() {
                   <Link to={"/login"} className="dropdown-item">
                     Patient
                   </Link>
-                  <a href="https://hm-system.netlify.app/" className="dropdown-item">
+                  <Link to={"/doctor-signup"} className="dropdown-item">
                     Doctor
-                  </a>
+                  </Link>
                 </NavDropdown>
               )}
               <Link to="/Report" className="nav-link">
